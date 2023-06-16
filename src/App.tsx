@@ -1,8 +1,12 @@
+import Calendar from "./Components/Calendar";
 import Header from "./Components/Header";
 
 function App() {
   return (
-    <Header /> 
+    <div className="h-screen">
+      <Header />
+      <Calendar/> 
+    </div>
   );
 }
 
