@@ -6,7 +6,7 @@ interface WeekProps{
 
 function Week(props: WeekProps){
     return (
-        <div className="flex flex-row w-full justify-between">
+        <div className="flex flex-row w-full justify-between h-full">
             {
                 props.weekArray.map((day: Date, index) => {
                     return (

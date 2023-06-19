@@ -15,7 +15,7 @@ function Calendar(){
         const firstDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth(), 1);
         const firstdayWeekDay = firstDayOfMonth.getDay();
 
-        //console.log(firstDayOfMonth);
+        //console.log(firstDayOfMonth);d
         //console.log(firstdayWeekDay);
 
         let monthArray: Date[][] = [];
