@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Calendar from "./Components/Calendar";
 import Header from "./Components/Header";
+import PopUp from "./Components/PopUp";
 
 function App() {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
@@ -29,6 +30,7 @@ function App() {
     <div className="h-screen flex flex-col">
       <Header date={currentDate} plusMonth={plusMonth} minusMonth={minusMonth} plusYear={plusYear} minusYear={minusYear} />
       <Calendar date={currentDate}  />
+      <PopUp />
     </div>
   );
 }
