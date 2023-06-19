@@ -1,17 +1,21 @@
 import { useEffect, useState } from "react";
 import Week from "./Week";
 
-function Calendar(){
+interface CalendarProps{
+    date: Date
+}
+
+function Calendar(props: CalendarProps){
 
     const [month, setMonth] = useState<Date[][]>();
 
     useEffect(() => {
         InitDate();
-
-    }, []);
+    }, [props.date]);
 
     function InitDate(){
-        const dateToday = new Date();
+        const dateToday = props.date;
+        console.log(dateToday.toString());
         const firstDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth(), 1);
         const firstdayWeekDay = firstDayOfMonth.getDay();
 
@@ -40,7 +44,7 @@ function Calendar(){
             {
                 month?.map((weekArray, index) => {
                     return (
-                        <Week weekArray={weekArray} key={index}/>
+                        <Week weekArray={weekArray} currentDate={props.date} key={index}/>
                     )
                 })
             }

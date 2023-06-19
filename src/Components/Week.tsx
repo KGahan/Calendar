@@ -2,6 +2,7 @@ import Day from "./Day";
 
 interface WeekProps{
     weekArray: Date[]
+    currentDate: Date
 }
 
 function Week(props: WeekProps){
@@ -10,7 +11,7 @@ function Week(props: WeekProps){
             {
                 props.weekArray.map((day: Date, index) => {
                     return (
-                        <Day day={day} key={index}/>
+                        <Day day={day} key={index} currentDate={props.currentDate}/>
                     )
                 })
             }

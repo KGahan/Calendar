@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="h-screen flex flex-col">
       <Header date={currentDate} plusMonth={plusMonth} minusMonth={minusMonth} plusYear={plusYear} minusYear={minusYear} />
-      <Calendar />
+      <Calendar date={currentDate}  />
     </div>
   );
 }
