@@ -15,19 +15,14 @@ function Calendar(props: CalendarProps){
 
     function InitDate(){
         const dateToday = props.date;
-        console.log(dateToday.toString());
         const firstDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth(), 1);
         const firstdayWeekDay = firstDayOfMonth.getDay();
-
-        //console.log(firstDayOfMonth);d
-        //console.log(firstdayWeekDay);
 
         let monthArray: Date[][] = [];
         let dateIterator = firstDayOfMonth;
         dateIterator.setDate(dateIterator.getDate() - (firstdayWeekDay - 1));
-        //console.log(dateIterator); 
 
-        for (let week = 0; week < 5; week++) {
+        while (dateIterator.getMonth() <= dateToday.getMonth()) {
             let weekArray: Date[] = [];
             for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
                 weekArray.push(new Date(dateIterator.getTime()));
