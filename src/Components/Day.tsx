@@ -11,7 +11,7 @@ function Day(props: DayProps){
         return false;
     }
     return (
-        <div className="w-full border border-black" style={{backgroundColor: isCurrentMonth()?"#00ff00":"#ff0000"}}>
+        <div className="w-full" style={{backgroundColor: isCurrentMonth()?"#ffffff":"#DEDEDE"}}>
             {props.day.getDate()}
 
         </div>
