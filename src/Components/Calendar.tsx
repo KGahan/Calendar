@@ -14,22 +14,23 @@ function Calendar(props: CalendarProps){
     }, [props.date]);
 
     function InitDate(){
-        const dateToday = props.date;
-        const firstDayOfMonth = new Date(dateToday.getFullYear(), dateToday.getMonth(), 1);
+        const date = props.date;
+        const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
         const firstdayWeekDay = firstDayOfMonth.getDay();
 
         let monthArray: Date[][] = [];
         let dateIterator = firstDayOfMonth;
-        dateIterator.setDate(dateIterator.getDate() - (firstdayWeekDay - 1));
+        dateIterator.setDate(dateIterator.getDate() - (firstdayWeekDay));
 
-        while (dateIterator.getMonth() <= dateToday.getMonth()) {
+        do  {
             let weekArray: Date[] = [];
             for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
                 weekArray.push(new Date(dateIterator.getTime()));
                 dateIterator.setDate(dateIterator.getDate() + 1);
             } 
             monthArray.push(weekArray);
-        }
+            console.log(dateIterator.getFullYear());
+        } while (dateIterator.getMonth() <= date.getMonth() && dateIterator.getFullYear() <= date.getFullYear());
         setMonth(monthArray);
     }
 

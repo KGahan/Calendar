@@ -3,26 +3,30 @@ import Calendar from "./Components/Calendar";
 import Header from "./Components/Header";
 
 function App() {
-  const [currentDate, setCurrentDate] = useState<Date>(new Date());
+  const [currentDate, setCurrentDate] = useState<Date>(new Date(new Date().getFullYear(), new Date().getMonth(), 15));
 
   function plusMonth() {
-    let newDate = new Date(currentDate.getFullYear(),currentDate.getMonth()+1,currentDate.getDay());
-    setCurrentDate(newDate);    
+    let currentDateCopy= new Date(currentDate);
+    currentDateCopy.setMonth(currentDateCopy.getMonth()+1);
+    setCurrentDate(currentDateCopy);    
   }
 
   function minusMonth() {
-    let newDate = new Date(currentDate.getFullYear(),currentDate.getMonth()-1,currentDate.getDay());
-    setCurrentDate(newDate);    
+    let currentDateCopy= new Date(currentDate);
+    currentDateCopy.setMonth(currentDateCopy.getMonth()-1);
+    setCurrentDate(currentDateCopy);    
   }
 
   function plusYear() {
-    let newDate = new Date(currentDate.getFullYear()+1,currentDate.getMonth(),currentDate.getDay());
-    setCurrentDate(newDate);    
+    let currentDateCopy= new Date(currentDate);
+    currentDateCopy.setFullYear(currentDateCopy.getFullYear()+1);
+    setCurrentDate(currentDateCopy); 
   }
 
   function minusYear() {
-    let newDate = new Date(currentDate.getFullYear()-1,currentDate.getMonth(),currentDate.getDay());
-    setCurrentDate(newDate);    
+    let currentDateCopy= new Date(currentDate);
+    currentDateCopy.setFullYear(currentDateCopy.getFullYear()-1);
+    setCurrentDate(currentDateCopy);    
   }
 
   return (
