@@ -17,7 +17,13 @@ function Calendar(props: CalendarProps){
     
             let monthArray: Date[][] = [];
             let dateIterator = firstDayOfMonth;
-            dateIterator.setDate(dateIterator.getDate() - (firstdayWeekDay));
+            
+            if(firstdayWeekDay === 0){
+            dateIterator.setDate(dateIterator.getDate() - 6);
+            }
+            else{
+                dateIterator.setDate(dateIterator.getDate() - (firstdayWeekDay-1));
+            }
     
             do  {
                 let weekArray: Date[] = [];
