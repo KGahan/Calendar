@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Week from "./Week";
+import Day from "./Day";
 
 interface CalendarProps{
     date: Date
@@ -8,6 +9,7 @@ interface CalendarProps{
 function Calendar(props: CalendarProps){
 
     const [month, setMonth] = useState<Date[][]>();
+    const [activity, SetActivity] = useState<Date[][]>();
 
     useEffect(() => {
         function InitDate(){
@@ -32,7 +34,6 @@ function Calendar(props: CalendarProps){
                     dateIterator.setDate(dateIterator.getDate() + 1);
                 } 
                 monthArray.push(weekArray);
-                console.log(dateIterator.getFullYear());
             } while (dateIterator.getMonth() <= date.getMonth() && dateIterator.getFullYear() <= date.getFullYear());
             setMonth(monthArray);
         }
@@ -48,7 +49,6 @@ function Calendar(props: CalendarProps){
                     )
                 })
             }
-            
         </div>
     )
 }
