@@ -3,7 +3,7 @@ import { useState } from "react";
 interface PopupProps {
     day: Date
     closePopup: Function
-    saveActivity : Function
+    saveActivity: Function
 }
 
 function PopUp(props: PopupProps) {
@@ -14,8 +14,7 @@ function PopUp(props: PopupProps) {
     return (
         <div className="absolute h-full w-full flex justify-center items-center bg-black bg-opacity-50 top-0 left-0">
             <div className="bg-white border-2 border-black">
-                <div className="w-full p-5 bg-blue-300 text-white text-center text-2xl font-bold border-black">Add an Event </div>
-                <div className="w-full p-5 bg-blue-300 text-white text-center text-2xl font-bold border-b-2 border-black">{props.day.getDate() + "." + (props.day.getMonth()+1).toString() + "." + props.day.getFullYear().toString()}</div>
+                <div className="w-full p-5 bg-blue-300 text-white text-center text-2xl font-bold border-b-2 border-black">Add an Event{" - " + props.day.getDate() + "." + (props.day.getMonth() + 1).toString() + "." + props.day.getFullYear().toString()}</div>
                 <div className="p-5">
                     <input
                         id="titleInput"
@@ -61,7 +60,7 @@ function PopUp(props: PopupProps) {
                         </div>
                     </div>
                     <textarea
-                        className="mb-5 w-full bg-white text-black hover:bg-blue-200 border-2 border-black font-bold py-2 px-4 rounded"
+                        className="mb-5 w-full max-h-52 bg-white text-black hover:bg-blue-200 border-2 border-black font-bold py-2 px-4 rounded"
                         placeholder="Description"
                         onChange={e => setDescriptionInputState(e.target.value)}
                     ></textarea>

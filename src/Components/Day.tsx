@@ -57,7 +57,7 @@ function Day(props: DayProps) {
                     {
                         activities.map((activity, index) => {
                             return (
-                                <div key={index} className="bg-blue-300 rounded-md m-1" onClick={() => showActivity(activity.title, activity.description)}>
+                                <div key={index} className="bg-blue-300 rounded border-2 border-black" onClick={() => showActivity(activity.title, activity.description)}>
                                     {activity.title}
                                 </div>
                             )
