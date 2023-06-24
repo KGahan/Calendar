@@ -15,7 +15,7 @@ function PopUp(props: PopupProps) {
         <div className="absolute h-full w-full flex justify-center items-center bg-black bg-opacity-50 top-0 left-0">
             <div className="bg-white border-2 border-black">
                 <div className="w-full p-5 bg-blue-300 text-white text-center text-2xl font-bold border-black">Add an Event </div>
-                <div className="w-full p-5 bg-blue-300 text-white text-center text-2xl font-bold border-b-2 border-black">{props.day.getDate() + "." + props.day.getMonth().toString() + "." + props.day.getFullYear().toString()}</div>
+                <div className="w-full p-5 bg-blue-300 text-white text-center text-2xl font-bold border-b-2 border-black">{props.day.getDate() + "." + (props.day.getMonth()+1).toString() + "." + props.day.getFullYear().toString()}</div>
                 <div className="p-5">
                     <input
                         id="titleInput"

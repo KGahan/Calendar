@@ -21,7 +21,7 @@ function Calendar(props: CalendarProps){
             let dateIterator = firstDayOfMonth;
             
             if(firstdayWeekDay === 0){
-            dateIterator.setDate(dateIterator.getDate() - 6);
+                dateIterator.setDate(dateIterator.getDate() - 6);
             }
             else{
                 dateIterator.setDate(dateIterator.getDate() - (firstdayWeekDay-1));
